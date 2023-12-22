@@ -14,7 +14,7 @@ class GraphEditor {
     #addEventListeners() {
         this.canvas.addEventListener("mousedown", (evt) => {
             const mouse = new Point(evt.offsetX, evt.offsetY);
-            this.hovered = getNearestPoint(mouse, this.graph.points, 10)
+            this.hovered = getNearestPoint(mouse, this.graph.points, 10);
             if(this.hovered) {
                 this.selected = this.hovered;
                 return;
@@ -24,7 +24,7 @@ class GraphEditor {
         });
         this.canvas.addEventListener("mousemove", (evt) => {
             const mouse = new Point(evt.offsetX, evt.offsetY);
-            this.hovered = getNearestPoint(mouse, this.graph.points, 10)   
+            this.hovered = getNearestPoint(mouse, this.graph.points, 10);  
         });    
     }
 
