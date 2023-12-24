@@ -18,8 +18,9 @@
         <script src="js/math/graph.js"></script>
         <script src="js/primitives/point.js"></script>
         <script src="js/primitives/segment.js"></script>
-                <script>
-                        myCanvas.width = 600;
+        <script src="js/primitives/polygon.js"></script>
+        <script>
+            myCanvas.width = 600;
             myCanvas.height = 600;
 
             const ctx = myCanvas.getContext("2d");
@@ -36,8 +37,9 @@
 
             function animate() {
                 viewport.reset();
-                                graphEditor.display();
-                                requestAnimationFrame(animate);
+                graphEditor.display();
+                new Polygon(graph.points).draw(ctx);
+                requestAnimationFrame(animate);
             }
 
             function dispose() {
