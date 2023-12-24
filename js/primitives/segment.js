@@ -5,16 +5,16 @@ class Segment {
     }
 
     equals(seg) {
-        return this.includes(seg.p1) && this.includes(seg.p2)
+        return this.includes(seg.p1) && this.includes(seg.p2);
     }
 
     includes(point) {
         return this.p1.equals(point) || this.p2.equals(point);
     }
 
-    draw(ctx, { width=2, color="black", dash = []} = {}){
+    draw(ctx, { width = 2, color = "black", dash = [] } = {}) {
         ctx.beginPath();
-        ctx.linewidth = width;
+        ctx.lineWidth = width;
         ctx.strokeStyle = color;
         ctx.setLineDash(dash);
         ctx.moveTo(this.p1.x, this.p1.y);

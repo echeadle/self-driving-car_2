@@ -34,10 +34,8 @@ class Graph {
         for (const seg of segs) {
             this.removeSegment(seg);
         }
-
         this.points.splice(this.points.indexOf(point), 1);
     }
-
 
     addSegment(seg) {
         this.segments.push(seg);
@@ -63,7 +61,7 @@ class Graph {
         const segs = [];
         for (const seg of this.segments) {
             if (seg.includes(point)) {
-                segs.push(seg)
+                segs.push(seg);
             }
         }
         return segs;
