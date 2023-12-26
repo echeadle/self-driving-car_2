@@ -1,7 +1,13 @@
-1:05:06  End Phase 1
-1:18:50  Stopped 11/22/2023 11:26
-1:32:22
-2:22:38
-2:29:16
 
 
+⌨️ (0:00:00) Introduction
+⌨️ (0:05:21) Project Setup
+⌨️ (0:10:16) Spatial Graphs
+⌨️ (0:47:50) Graph Editor
+⌨️ (1:27:30) Dynamic Viewport
+⌨️ (2:03:15) Generating Roads
+⌨️ (2:49:25) Buildings And Trees
+⌨️ (3:31:47) Pseudo 3D
+⌨️ (4:04:59) Road Markings
+⌨️ (5:09:65) Saving the World
+⌨️ (5:40:57) Outro
