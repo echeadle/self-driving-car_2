@@ -1,11 +1,11 @@
 class World {
-    constructor(graph, roadWidth = 100, roadRoundness = 3) {
+    constructor(graph, roadWidth = 100, roadRoundness = 10) {
         this.graph = graph;
         this.roadWidth = roadWidth;
         this.roadRoundness = roadRoundness;
 
         this.envelopes = [];
-        // this.roadBorders = [];
+        this.roadBorders = [];
 
         this.generate();
     }
@@ -18,18 +18,15 @@ class World {
             );
         }
 
-        this.intersections = Polygon.break(
-            this.envelopes[0].poly,
-            this.envelopes[1].poly
-        );
+        this.roadBorders = Polygon.union(this.envelopes.map((e) => e.poly));
     }
 
     draw(ctx) {
         for (const env of this.envelopes) {
             env.draw(ctx);
         }
-        for (const int of this.intersections) {
-            int.draw(ctx, {color: "red", size: 6});
+        for (const seg of this.roadBorders) {
+            seg.draw(ctx, {color: "white", width: 4});
         }
     }
 }
