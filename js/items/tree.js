@@ -5,6 +5,6 @@ class Tree {
     }
 
     draw(ctx) {
-        this.center.draw(ctx, { size: this.size, color: "green" })
+        this.center.draw(ctx, { size: this.size, color: "green" });
     }
 }
