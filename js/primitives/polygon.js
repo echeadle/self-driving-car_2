@@ -1,7 +1,7 @@
 class Polygon {
     constructor(points) {
         this.points = points;
-        this.segments =[];
+        this.segments = [];
         for (let i = 1; i <= points.length; i++) {
             this.segments.push(
                 new Segment(points[i - 1], points[i % points.length])
@@ -63,6 +63,14 @@ class Polygon {
             }
         }
     }
+
+    distanceToPoint(point) {
+        return Math.min(...this.segments.map((s) => s.distanceToPoint(point)));
+    }
+
+   distanceToPoly(poly) {
+      return Math.min(...this.points.map((p) => poly.distanceToPoint(p)));
+   }
 
     intersectsPoly(poly) {
         for (let s1 of this.segments) {
