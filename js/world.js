@@ -175,7 +175,7 @@ class World {
         }
 
         for (const tree of this.trees) {
-            tree.draw(ctx, { size: this.treeSize, color: "rgba(0,0,0,0.5)" });
+            tree.draw(ctx);
         }
         for (const bld of this.buildings) {
             bld.draw(ctx);
