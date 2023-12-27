@@ -71,7 +71,7 @@ class World {
             // check if tree too close to other trees
             if (keep) {
                 for (const tree of trees) {
-                        if (distance(tree, p) < this.treeSize) {
+                        if (distance(tree.center, p) < this.treeSize) {
                         keep = false;
                         break;
                     }
