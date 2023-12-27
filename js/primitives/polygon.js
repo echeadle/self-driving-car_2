@@ -106,7 +106,10 @@ class Polygon {
         }
     }
 
-    draw(ctx, {stroke = "blue", lineWidth = 2, fill = "rgba(0,0,255,0.3)" } = {} ) {
+    draw(
+      ctx,
+      { stroke = "blue", lineWidth = 2, fill = "rgba(0,0,255,0.3)" } = {}
+   ) {
         ctx.beginPath();
         ctx.fillStyle = fill;
         ctx.strokeStyle = stroke;

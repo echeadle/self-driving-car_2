@@ -14,7 +14,7 @@ class Graph {
      }
 
      hash() {
-        return  JSON.stringify(this);
+        return JSON.stringify(this);
      }
     
     addPoint(point) {

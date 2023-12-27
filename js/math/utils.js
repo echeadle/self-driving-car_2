@@ -12,7 +12,7 @@ function getNearestPoint(loc, points, threshold = Number.MAX_SAFE_INTEGER) {
 }
 
 function distance(p1, p2) {
-    return Math.hypot(p1.x - p2.x, p1.y - p2.y);
+        return Math.hypot(p1.x - p2.x, p1.y - p2.y);
 }
 
 function average(p1, p2) {
@@ -36,7 +36,7 @@ function scale(p, scaler) {
 }
 
 function normalize(p) {
-    return scale(p, 1 /magnitude(p));
+    return scale(p, 1 / magnitude(p));
 }
 
 function magnitude(p) {
@@ -54,13 +54,12 @@ function angle(p) {
     return Math.atan2(p.y, p.x);
 }
 
-
 function getIntersection(A, B, C, D) {
     const tTop = (D.x - C.x) * (A.y - C.y) - (D.y - C.y) * (A.x - C.x);
     const uTop = (C.y - A.y) * (A.x - B.x) - (C.x - A.x) * (A.y - B.y);
     const bottom = (D.y - C.y) * (B.x - A.x) - (D.x - C.x) * (B.y - A.y);
     
-    const eps = 0.001
+    const eps = 0.001;
     if (Math.abs(bottom) > eps) {
        const t = tTop / bottom;
        const u = uTop / bottom;
