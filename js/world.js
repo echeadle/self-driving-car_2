@@ -160,7 +160,7 @@ class World {
             }
         }
 
-        return bases.map((b) => new this.Building(b));
+        return bases.map((b) => new Building(b));
     }
 
     draw(ctx, viewPoint) {
