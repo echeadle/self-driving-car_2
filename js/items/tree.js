@@ -1,7 +1,8 @@
 class Tree {
-    constructor(center, size) {
+    constructor(center, size, heightCoef = 0.3) {
         this.center = center;
         this.size = size; // size of the base
+        this.heightCoef = heightCoef;
     }
 
     draw(ctx, viewPoint) {
@@ -9,7 +10,7 @@ class Tree {
 
         this.center.draw(ctx, { size: this.size, color: "green" });
 
-        const top = add(this.center, diff);
+        const top = add(this.center, scale(diff, this.heightCoef));
         new Segment(this.center, top).draw(ctx)
     }
 }
