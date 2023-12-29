@@ -12,7 +12,7 @@ class Crossing {
         );
         this.poly = new Envelope(this.support, width, 0).poly;
 
-        this.border = this.poly.segments[2];
+        this.borders = [this.poly.segments[0], this.poly.segments[2]];
     }
 
     draw(ctx) {
@@ -26,6 +26,9 @@ class Crossing {
             color: "white",
             dash: [11, 11]
         });
+        for (const b of this.borders) {
+            b.draw(ctx);
+        }
     }
 
 }
