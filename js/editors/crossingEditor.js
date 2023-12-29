@@ -4,11 +4,11 @@ class CrossingEditor extends MarkingEditor {
     }
 
     createMarking(center, directionVector) {
-        return new CrossingEditor(
+        return new Crossing(
              center,
              directionVector,
              world.roadWidth,
-             world. roadWidth / 2
+             world.roadWidth / 2
         );
     }
 }

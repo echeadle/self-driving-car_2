@@ -14,8 +14,9 @@ class MarkingEditor {
         this.markings = world.markings;
     }
 
+// to be overwritten
     createMarking(center, directionVector) {
-        return center
+        return center;
     }
 
     enable() {
@@ -24,18 +25,16 @@ class MarkingEditor {
 
     disable() {
         this.#removeEventListeners();
-  
-    }
+      }
 
     #addEventListeners() {
         this.boundMouseDown = this.#handleMouseDown.bind(this);
         this.boundMouseMove = this.#handleMouseMove.bind(this);
         this.boundContextMenu = (evt) => evt.preventDefault();
-        this.canvas.addEventListener("mousedown",  this.boundMouseDown);
+        this.canvas.addEventListener("mousedown", this.boundMouseDown);
         this.canvas.addEventListener("mousemove", this.boundMouseMove);
         this.canvas.addEventListener("contextmenu", this.boundContextMenu);
-        
-   }
+           }
 
     #removeEventListeners() {
         this.canvas.removeEventListener("mousedown", this.boundMouseDown);
@@ -43,19 +42,20 @@ class MarkingEditor {
         this.canvas.removeEventListener("contextmenu", this.boundContextMenu);
         
    }
+
     #handleMouseMove(evt) {
         this.mouse = this.viewport.getMouse(evt, true);
         const seg = getNearestSegment(
             this.mouse,
-            this.world.targetSegments,
+            this.targetSegments,
             10 * this.viewport.zoom
         );
         if (seg) {
             const proj = seg.projectPoint(this.mouse);
-            if (proj.offset >= 0 && proj.offset <=1) {
-                this.intent = new this.createMarking(
+            if (proj.offset >= 0 && proj.offset <= 1) {
+                this.intent = this.createMarking(
                     proj.point,
-                    seg.directionVector(),
+                    seg.directionVector()
                 );
             } else {
                 this.intent = null;
@@ -72,7 +72,7 @@ class MarkingEditor {
                 this.intent = null;
             }
         }
-        if(evt.button == 2) { // right click
+        if (evt.button == 2) { // right click
             for (let i = 0; i < this.markings.length; i++) {
                 const poly = this.markings[i].poly;
                 if (poly.containsPoint(this.mouse)) {
@@ -85,7 +85,7 @@ class MarkingEditor {
 
     display() {
         if (this.intent) {
-            this.intent.draw(this.ctx)
+            this.intent.draw(this.ctx);
         }
     }
 }
