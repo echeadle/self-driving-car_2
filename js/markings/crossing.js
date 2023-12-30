@@ -17,5 +17,4 @@ class Crossing extends Marking {
             dash: [11, 11]
         });
     }
-
 }
